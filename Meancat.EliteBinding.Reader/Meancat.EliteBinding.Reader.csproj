@@ -5,6 +5,7 @@
         <LangVersion>9.0</LangVersion>
         <Nullable>enable</Nullable>
         <ImplicitUsings>disable</ImplicitUsings> <!-- not supported by unity -->
+        <WarningsAsErrors>enable</WarningsAsErrors>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
 
