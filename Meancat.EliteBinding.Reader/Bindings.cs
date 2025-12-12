@@ -17,6 +17,10 @@ namespace Meancat.EliteBinding.Reader
             Key = key;
         }
 
+        public override string ToString()
+        {
+            return $"Binding(Name='{Name}', Device='{Device}', Key='{Key}')";
+        }
     }
 
 
