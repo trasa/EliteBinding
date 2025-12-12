@@ -4,7 +4,20 @@ using System.Xml.Linq;
 
 namespace Meancat.EliteBinding.Reader
 {
-    public record Binding(string Name, string Device, string Key);
+    public class Binding
+    {
+        public string Name { get; set; }
+        public string Device { get; set; }
+        public string Key { get; set; }
+
+        public Binding(string name, string device, string key)
+        {
+            Name = name;
+            Device = device;
+            Key = key;
+        }
+
+    }
 
 
     public class Bindings
@@ -31,9 +44,9 @@ namespace Meancat.EliteBinding.Reader
 
         public IEnumerable<Binding> ForDevice(string deviceName) => DeviceElements(deviceName)
             .Select(e => new Binding(
-                Name: e.Parent?.Name.LocalName ?? "UNKNOWN",
-                Device: e.Attribute(Attributes.Device)?.Value ?? Device.None,
-                Key: e.Attribute(Attributes.Key)?.Value ?? "UNKNOWN"
+                e.Parent?.Name.LocalName ?? "UNKNOWN",
+                e.Attribute(Attributes.Device)?.Value ?? Device.None,
+                e.Attribute(Attributes.Key)?.Value ?? "UNKNOWN"
             ));
 
         public IEnumerable<string> NoDevice => NoDeviceElements
