@@ -31,7 +31,7 @@ foreach (var name in Bindings.NoDevice)
 foreach(var binding in Bindings.ForDevice("044FB352")) // values from your Bindings file
 {
     Output.WriteLine($"'{binding.Name}'' is key {binding.Key}");
-    //Example: 'Supercruise'is key Joy_13
+    //Example: 'Supercruise' is key Joy_13
 }
 ```
 
